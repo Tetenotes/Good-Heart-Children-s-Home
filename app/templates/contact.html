@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Reach out to visit, volunteer, donate, partner, or ask a question.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <h2>Good Heart Children's Home</h2>
+                <p>{{ contact_info.phones[0] }}</p>
+                <p>{{ contact_info.phones[1] }}</p>
+                <p>{{ contact_info.email }}</p>
+                <div class="map-frame mt-4"><iframe title="Google map"
+                        src="https://www.google.com/maps?q=Kenya&output=embed" loading="lazy"></iframe></div>
+            </div>
+            <div class="col-lg-7">
+                <form method="post" class="form-panel">{{ form.hidden_tag() }}{% include "_form.html" %}{{
+                    form.submit(class="btn btn-success") }}</form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

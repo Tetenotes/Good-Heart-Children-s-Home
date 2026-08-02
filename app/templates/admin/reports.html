@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section admin-section">
+    <div class="container">{% include "admin/_nav.html" %}<h1>Reports</h1>
+        <div class="stats-grid">
+            <div><strong>{{ child_count }}</strong><span>Children registered</span></div>
+            <div><strong>{{ volunteer_count }}</strong><span>Volunteer applications</span></div>
+            <div><strong>{{ donation_total }}</strong><span>Total pledged donations</span></div>
+            <div><strong>{{ unread_messages }}</strong><span>Unread messages</span></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section admin-section">
+    <div class="container narrow">{% include "admin/_nav.html" %}<h1>{{ action }} {{ label }}</h1>
+        <form method="post" class="form-panel">{{ form.hidden_tag() }}{% include "_form.html" %}{{
+            form.submit(class="btn btn-success") }} <a class="btn btn-outline-secondary"
+                href="javascript:history.back()">Cancel</a></form>
+    </div>
+</section>
+{% endblock %}

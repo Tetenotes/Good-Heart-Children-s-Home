@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Donate</h1>
+        <p>Your gift helps provide meals, school supplies, healthcare, clothing, and a safe home.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <h2>Donation Options</h2>
+                <p>M-Pesa, PayPal, child sponsorship, and PDF receipts are prepared as future integrations. This form
+                    currently records donation pledges for admin follow-up.</p>
+                <p class="fw-semibold">{{ contact_info.phones[0] }}<br>{{ contact_info.phones[1] }}</p>
+            </div>
+            <div class="col-lg-7">
+                <form method="post" class="form-panel">{{ form.hidden_tag() }}{% include "_form.html" %}{{
+                    form.submit(class="btn btn-success") }}</form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

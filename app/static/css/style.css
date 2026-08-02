@@ -1,0 +1,248 @@
+:root {
+    --green: #27754d;
+    --green-dark: #184c34;
+    --gold: #e4a11b;
+    --ink: #17221d;
+    --muted: #5b6b62;
+    --soft: #f3f8f5;
+    --line: #dfe8e2;
+}
+
+body {
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+}
+
+a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--green-dark);
+}
+
+.flash-wrap {
+    margin-top: 1rem;
+}
+
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background:
+        linear-gradient(90deg, rgba(20, 57, 39, .88), rgba(20, 57, 39, .52)),
+        url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=80") center/cover;
+}
+
+.hero-content {
+    max-width: 760px;
+    padding: 7rem 0;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5.6rem);
+    font-weight: 800;
+    line-height: 1.02;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.18rem;
+    max-width: 620px;
+}
+
+.page-hero {
+    color: #fff;
+    background: linear-gradient(120deg, var(--green-dark), var(--green));
+    padding: 5rem 0;
+}
+
+.page-hero h1 {
+    font-size: clamp(2rem, 5vw, 4.25rem);
+    font-weight: 800;
+}
+
+.page-hero p {
+    max-width: 760px;
+    font-size: 1.1rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.bg-soft {
+    background: var(--soft);
+}
+
+.eyebrow {
+    font-size: .82rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 2rem;
+}
+
+.feature-card,
+.team-card,
+.form-panel,
+.info-panel,
+.list-item,
+.quote {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.feature-card h3,
+.list-item h3 {
+    font-size: 1.25rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.stats-grid div {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    padding: 1.25rem;
+}
+
+.stats-grid strong {
+    display: block;
+    color: var(--green);
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.stats-grid span {
+    color: var(--muted);
+    font-size: .95rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img,
+.team-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery-grid figure {
+    margin: 0;
+}
+
+.gallery-grid figcaption {
+    margin-top: .5rem;
+    font-weight: 700;
+}
+
+.gallery-placeholder {
+    min-height: 190px;
+    display: grid;
+    place-items: center;
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.donate-band {
+    padding: 4rem 0;
+    color: #fff;
+    background: var(--green);
+}
+
+.donate-band h2 {
+    max-width: 850px;
+}
+
+.quote {
+    font-size: 1.05rem;
+    color: var(--green-dark);
+}
+
+.map-frame {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    min-height: 320px;
+}
+
+.map-frame iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+.narrow {
+    max-width: 760px;
+}
+
+.admin-section {
+    background: #f7faf8;
+    min-height: 70vh;
+}
+
+.admin-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+.admin-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    padding: .45rem .75rem;
+    font-weight: 700;
+}
+
+.footer {
+    color: #e9f5ee;
+    background: var(--green-dark);
+}
+
+.footer a {
+    display: block;
+    color: #fff;
+    margin-bottom: .35rem;
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, .18);
+}
+
+@media (max-width: 767px) {
+    .hero {
+        min-height: 560px;
+    }
+
+    .section {
+        padding: 3.5rem 0;
+    }
+}

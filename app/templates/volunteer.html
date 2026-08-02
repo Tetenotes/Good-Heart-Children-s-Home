@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Volunteer</h1>
+        <p>Share your time, skills, and presence with children who need encouragement.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <h2>Ways to Help</h2>
+                <p>Tutoring, mentorship, caregiving support, professional services, events, fundraising, and practical
+                    maintenance all make a difference.</p>
+            </div>
+            <div class="col-lg-7">
+                <form method="post" class="form-panel">{{ form.hidden_tag() }}{% include "_form.html" %}{{
+                    form.submit(class="btn btn-success") }}</form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>News & Events</h1>
+        <p>Updates, stories, activities, and upcoming opportunities to support the children.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <h2>News</h2>{% for post in posts %}<article class="list-item">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.summary }}</p>
+                    <p>{{ post.body }}</p>
+                </article>{% else %}<p>No published news yet.</p>{% endfor %}
+            </div>
+            <div class="col-lg-5">
+                <h2>Events</h2>{% for event in events %}<article class="list-item">
+                    <h3>{{ event.title }}</h3>
+                    <p>{{ event.event_date or "Date to be announced" }}{% if event.location %} at {{ event.location }}{%
+                        endif %}</p>
+                    <p>{{ event.description }}</p>
+                </article>{% else %}<p>No events listed yet.</p>{% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section admin-section">
+    <div class="container">{% include "admin/_nav.html" %}<h1>Dashboard</h1>
+        <div class="stats-grid mb-4">{% for key, value in totals.items() %}<div><strong>{{ value }}</strong><span>{{
+                    key|title }}</span></div>{% endfor %}<div><strong>{{ donation_total }}</strong><span>Total
+                    Donations</span></div>
+        </div>
+        <h2>Recent Messages</h2>{% for message in recent_messages %}<article class="list-item">
+            <h3>{{ message.subject }}</h3>
+            <p>{{ message.name }} - {{ message.email }}</p>
+        </article>{% else %}<p>No messages yet.</p>{% endfor %}
+    </div>
+</section>
+{% endblock %}

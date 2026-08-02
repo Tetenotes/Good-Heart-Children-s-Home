@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Meet Our Team</h1>
+        <p>The caregivers, staff, and partners who serve children with consistency and compassion.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row g-4">{% for person in staff %}<div class="col-md-4">
+                <div class="team-card">{% if person.photo_url %}<img src="{{ person.photo_url }}"
+                        alt="{{ person.full_name }}">{% endif %}<h2 class="h4">{{ person.full_name }}</h2>
+                    <p class="text-success fw-semibold">{{ person.position }}</p>
+                    <p>{{ person.bio }}</p>
+                </div>
+            </div>{% else %}<p>Team profiles will be added soon.</p>{% endfor %}</div>
+    </div>
+</section>
+{% endblock %}

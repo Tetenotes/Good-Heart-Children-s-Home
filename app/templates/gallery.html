@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Gallery</h1>
+        <p>Photos from programs, visits, activities, and community moments.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="gallery-grid">
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo1.jpg') }}" alt="Photo 1">
+                <figcaption>Photo 1</figcaption>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo2.jpg') }}" alt="Photo 2">
+                <figcaption>Photo 2</figcaption>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="Photo 3">
+                <figcaption>Photo 3</figcaption>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo4.jpg') }}" alt="Photo 4">
+                <figcaption>Photo 4</figcaption>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo5.jpg') }}" alt="Photo 5">
+                <figcaption>Photo 5</figcaption>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo6.jpg') }}" alt="Photo 6">
+                <figcaption>Photo 6</figcaption>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo7.jpg') }}" alt="Photo 7">
+                <figcaption>Photo 7</figcaption>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo8.jpg') }}" alt="Photo 8">
+                <figcaption>Photo 8</figcaption>
+            </figure>
+
+            <figure>
+                <img src="{{ url_for('static', filename='images/photo9.jpg') }}" alt="Photo 9">
+                <figcaption>Photo 9</figcaption>
+            </figure>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

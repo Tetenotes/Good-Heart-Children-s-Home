@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+    <div class="container narrow">
+        <h1>Admin Login</h1>
+        <form method="post" class="form-panel">{{ form.hidden_tag() }}{% include "_form.html" %}{{
+            form.submit(class="btn btn-success w-100") }}</form>
+    </div>
+</section>
+{% endblock %}

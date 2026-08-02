@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section admin-section">
+    <div class="container">{% include "admin/_nav.html" %}<h1>Contact Messages</h1>{% for message in messages %}<article
+            class="list-item">
+            <div class="d-flex justify-content-between gap-3">
+                <h2 class="h4">{{ message.subject }}</h2><span
+                    class="badge {{ 'text-bg-success' if message.is_read else 'text-bg-warning' }}">{{ "Read" if
+                    message.is_read else "Unread" }}</span>
+            </div>
+            <p>{{ message.name }} - {{ message.email }}{% if message.phone %} - {{ message.phone }}{% endif %}</p>
+            <p>{{ message.message }}</p>{% if not message.is_read %}<form method="post"
+                action="{{ url_for('main.mark_message_read', message_id=message.id) }}">{{ csrf_token() }}<button
+                    class="btn btn-sm btn-success">Mark Read</button></form>{% endif %}
+        </article>{% else %}<p>No contact messages yet.</p>{% endfor %}</div>
+</section>
+{% endblock %}

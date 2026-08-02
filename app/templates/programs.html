@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Our Programs</h1>
+        <p>Care programs designed around the everyday needs and future potential of each child.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="row g-4">{% for title, text in [("Residential Care", "Safe shelter, meals, clothing, guidance, and
+            loving routines."), ("Education Support", "School fees, uniforms, supplies, tutoring, and academic
+            follow-up."), ("Health & Wellness", "Nutrition, clinic visits, counseling, and emotional care."),
+            ("Mentorship", "Life skills, spiritual encouragement, talent development, and confidence building."),
+            ("Family Tracing", "Where appropriate, we support responsible family reconnection and community
+            reintegration."), ("Community Outreach", "Partnership with supporters to meet urgent needs and strengthen
+            child protection.")] %}<div class="col-md-6 col-lg-4">
+                <div class="feature-card">
+                    <h2 class="h4">{{ title }}</h2>
+                    <p>{{ text }}</p>
+                </div>
+            </div>{% endfor %}</div>
+    </div>
+</section>
+{% endblock %}

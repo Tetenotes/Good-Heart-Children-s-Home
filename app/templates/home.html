@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <p class="eyebrow">Good Heart Children's Home</p>
+            <h1>Care, shelter, education, and hope for vulnerable children.</h1>
+            <p>We provide a loving environment where children can heal, learn, belong, and grow toward a brighter
+                future.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-success btn-lg" href="{{ url_for('main.donate') }}">Support the Home</a>
+                <a class="btn btn-outline-light btn-lg" href="{{ url_for('main.volunteer') }}">Volunteer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <p class="eyebrow text-success">Welcome</p>
+                <h2>A safe place where every child is valued.</h2>
+                <p>Good Heart Children's Home exists to restore dignity and opportunity to children who need
+                    family-style care, guidance, and practical support.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="stats-grid">
+                    <div><strong>24/7</strong><span>Care and protection</span></div>
+                    <div><strong>3</strong><span>Core program areas</span></div>
+                    <div><strong>100%</strong><span>Community powered</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-soft">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h2>About Good Heart Children's Home</h2>
+                <p>We support children with shelter, meals, education, healthcare access, mentorship, counseling, and
+                    spiritual encouragement.</p>
+                <a href="{{ url_for('main.about') }}" class="btn btn-outline-success">Learn more</a>
+            </div>
+            <div class="col-md-6">
+                <h2>Mission & Vision</h2>
+                <p>Our mission is to provide compassionate care. Our vision is a society where every child grows in
+                    safety, love, and opportunity.</p>
+                <a href="{{ url_for('main.mission') }}" class="btn btn-outline-success">Read our mission</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow text-success">Programs</p>
+            <h2>Practical support for daily life and long-term growth.</h2>
+        </div>
+        <div class="row g-4">
+            {% for title, text in [
+            ("Residential Care", "A safe, loving home with daily meals, routines, and guidance."),
+            ("Education Support", "School fees, uniforms, supplies, tutoring, and mentorship."),
+            ("Health & Wellness", "Healthcare access, counseling, nutrition, and emotional support.")
+            ] %}
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>{{ title }}</h3>
+                    <p>{{ text }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section bg-soft">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <h2>Recent Activities</h2>
+                {% for event in events %}
+                <article class="list-item">
+                    <h3>{{ event.title }}</h3>
+                    <p>{{ event.description or "Community activity details will appear here." }}</p>
+                </article>
+                {% else %}
+                <p>Activities and upcoming events will be posted here soon.</p>
+                {% endfor %}
+            </div>
+            <div class="col-lg-6">
+                <h2>News & Events</h2>
+                {% for post in news_items %}
+                <article class="list-item">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.summary }}</p>
+                </article>
+                {% else %}
+                <p>News updates will appear here once published.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow text-success">Gallery</p>
+            <h2>Moments from the home.</h2>
+        </div>
+
+        <div class="gallery-grid">
+            <img src="{{ url_for('static', filename='images/photo1.jpg') }}" alt="Photo 1">
+            <img src="{{ url_for('static', filename='images/photo2.jpg') }}" alt="Photo 2">
+            <img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="Photo 3">
+            <img src="{{ url_for('static', filename='images/photo4.jpg') }}" alt="Photo 4">
+            <img src="{{ url_for('static', filename='images/photo5.jpg') }}" alt="Photo 5">
+            <img src="{{ url_for('static', filename='images/photo6.jpg') }}" alt="Photo 6">
+            <img src="{{ url_for('static', filename='images/photo7.jpg') }}" alt="Photo 7">
+            <img src="{{ url_for('static', filename='images/photo8.jpg') }}" alt="Photo 8">
+        </div>
+    </div>
+</section>
+
+<section class="donate-band">
+    <div class="container d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-lg-center">
+        <div>
+            <p class="eyebrow">Call to Donate</p>
+            <h2>Your support helps provide food, school needs, healthcare, and daily care.</h2>
+        </div>
+        <a class="btn btn-light btn-lg" href="{{ url_for('main.donate') }}">Donate Today</a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <blockquote class="quote">"Good Heart gives children stability, encouragement, and a reason to dream
+                    again."</blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="quote">"Every visit reminds us that small acts of kindness can shape a child's
+                    future."</blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="quote">"The team serves with patience, dignity, and genuine love."</blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-soft">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <h2>Contact Information</h2>
+                <p>{{ contact_info.phones[0] }}</p>
+                <p>{{ contact_info.phones[1] }}</p>
+                <p>{{ contact_info.email }}</p>
+                <a class="btn btn-success" href="{{ url_for('main.contact') }}">Contact Us</a>
+            </div>
+            <div class="col-lg-7">
+                <div class="map-frame">
+                    <iframe title="Google map" src="https://www.google.com/maps?q=Kenya&output=embed"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
